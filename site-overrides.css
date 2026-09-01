@@ -501,3 +501,352 @@ summary,
     gap: 1rem;
   }
 }
+
+/* Shared navigation and footer */
+html.nav-open,
+body.nav-open {
+  overflow: hidden;
+}
+
+.site-nav {
+  position: fixed;
+  top: 1rem;
+  left: clamp(1rem, 3vw, 2.5rem);
+  right: clamp(1rem, 3vw, 2.5rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.78rem 0.85rem 0.78rem 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+  z-index: 1400;
+}
+
+/*
+ * The frosted-glass pill background lives on ::before, not on .site-nav
+ * itself. backdrop-filter (like transform/filter) creates a new containing
+ * block for position:fixed descendants — since the mobile nav-panel
+ * overlay is a fixed-position child of .site-nav, putting backdrop-filter
+ * directly on .site-nav trapped that full-screen overlay inside the small
+ * nav pill instead of the viewport. This keeps the same visual effect
+ * without .site-nav becoming a containing block. (Legacy per-page <style>
+ * blocks also set `nav{backdrop-filter:...}`; `backdrop-filter: none`
+ * above wins over those by specificity and must stay explicit.)
+ */
+.site-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(10, 10, 10, 0.84);
+  backdrop-filter: blur(14px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.site-nav .nav-logo {
+  flex-shrink: 0;
+}
+
+.site-nav .nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.site-nav .nav-panel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.site-nav .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav .nav-head {
+  display: none;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav .nav-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link[aria-current="page"] {
+  color: #fff;
+}
+
+.site-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.45rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s ease;
+}
+
+.site-nav .nav-link:hover::after,
+.site-nav .nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.site-nav .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.78rem 1.35rem;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav .nav-cta:hover,
+.site-nav .nav-cta[aria-current="page"] {
+  background: transparent;
+  color: #fff;
+}
+
+.site-nav .nav-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.site-nav :focus-visible,
+.site-footer :focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.site-footer {
+  display: block;
+  padding: clamp(2.5rem, 4vw, 4rem) clamp(1rem, 5vw, 3rem)
+    clamp(1.75rem, 3vw, 2.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: #000;
+  color: #fff;
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+
+.site-footer-group {
+  min-width: 0;
+}
+
+.site-footer-heading {
+  margin-bottom: 0.85rem;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.site-footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.site-footer-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.96rem, 0.2vw + 0.9rem, 1.04rem);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer-link:hover {
+  color: #fff;
+}
+
+.site-footer-wordmark {
+  display: block;
+  margin-top: clamp(2rem, 6vw, 4rem);
+  width: clamp(220px, 42vw, 640px);
+}
+
+.site-footer-wordmark img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-footer-meta {
+  margin-top: 1.25rem;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    top: max(0.75rem, calc(env(safe-area-inset-top) + 0.25rem));
+    left: max(0.75rem, calc(env(safe-area-inset-left) + 0.25rem));
+    right: max(0.75rem, calc(env(safe-area-inset-right) + 0.25rem));
+    padding: 0.75rem 0.95rem;
+    border-radius: 18px;
+  }
+
+  .site-nav .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav .nav-panel {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-left: 0;
+    padding:
+      max(0.75rem, env(safe-area-inset-top))
+      max(0.75rem, env(safe-area-inset-right))
+      max(0.75rem, env(safe-area-inset-bottom))
+      max(0.75rem, env(safe-area-inset-left));
+    background: rgba(0, 0, 0, 0.96);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 2400;
+  }
+
+  .site-nav .nav-panel.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .site-nav .nav-menu {
+    width: min(calc(100% - 1rem), 31rem);
+    min-height: 100%;
+    margin-right: auto;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 24px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .site-nav .nav-head {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .site-nav .nav-close {
+    display: inline-flex;
+  }
+
+  .site-nav .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.1rem;
+    margin-top: clamp(1rem, 8vh, 4rem);
+  }
+
+  .site-nav .nav-link,
+  .site-nav .nav-cta {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .site-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.25rem;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  .site-nav .nav-link::after {
+    display: none;
+  }
+
+  .site-nav .nav-cta {
+    margin-top: auto;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer-wordmark {
+    width: min(90%, 420px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav .nav-panel,
+  .site-nav .nav-link::after,
+  .site-nav .nav-cta,
+  .site-footer-link {
+    transition: none !important;
+  }
+}
