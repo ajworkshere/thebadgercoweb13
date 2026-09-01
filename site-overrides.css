@@ -713,15 +713,15 @@ body.nav-open {
 }
 
 .site-footer-wordmark {
+  display: block;
   margin-top: clamp(2rem, 6vw, 4rem);
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: clamp(2.75rem, 11vw, 8rem);
-  font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: -0.07em;
-  text-wrap: balance;
-  overflow-wrap: anywhere;
+  width: clamp(220px, 42vw, 640px);
+}
+
+.site-footer-wordmark img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .site-footer-meta {
@@ -838,8 +838,7 @@ body.nav-open {
   }
 
   .site-footer-wordmark {
-    font-size: clamp(2.5rem, 16vw, 4.75rem);
-    line-height: 0.95;
+    width: min(90%, 420px);
   }
 }
 
