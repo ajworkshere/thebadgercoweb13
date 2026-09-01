@@ -102,24 +102,38 @@ footer{padding:2rem 1.75rem;display:flex;justify-content:space-between;align-ite
 </header>
 
 <section class="sec">
-  <div class="sec-title serif">Why a numbered size is incomplete.</div>
-  <p class="body-copy">Two people can share the same shoe size and still need entirely different width, toe-room, heel-security and cushioning characteristics. A single number was never designed to capture that. Badger Fit exists to fill in the rest of the picture — starting with measurement, moving to guidance, and eventually informing design.</p>
-</section>
+  <div class="tag" style="margin-bottom:.6rem">Our Story So Far</div>
+  <div class="sec-title serif" style="font-size:clamp(24px,3.2vw,36px);margin-bottom:2.25rem">From an incomplete size label to a long-term direction.</div>
+  <div class="timeline" data-timeline>
+    <div class="timeline-track"><div class="timeline-track-fill" data-timeline-fill></div></div>
 
-<section class="sec">
-  <div class="sec-title serif">Why Badger Fit exists — and what we're focused on today.</div>
-  <p class="body-copy">Right now, our focus is narrow and deliberate: an estimated foot scan, a rule-based Fit Check, and honest education. We're not trying to be everything at once. We'd rather get the measurement and guidance right first.</p>
-  <div class="hierarchy">
-    <span class="h-node mono">The Badger Co.</span><span class="h-arrow">→</span>
-    <span class="h-node mono">Badger Fit</span><span class="h-arrow">→</span>
-    <span class="h-node dim mono">Vault</span><span class="h-arrow">→</span>
-    <span class="h-node dim mono">Future Badger Footwear</span>
+    <div class="timeline-item">
+      <div class="timeline-marker"><span class="timeline-marker-dot"></span></div>
+      <div class="tag timeline-eyebrow">The Problem</div>
+      <div class="timeline-title serif">Why a numbered size is incomplete.</div>
+      <p class="body-copy">Two people can share the same shoe size and still need entirely different width, toe-room, heel-security and cushioning characteristics. A single number was never designed to capture that. Badger Fit exists to fill in the rest of the picture — starting with measurement, moving to guidance, and eventually informing design.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-marker"><span class="timeline-marker-dot"></span></div>
+      <div class="tag timeline-eyebrow">Today</div>
+      <div class="timeline-title serif">Why Badger Fit exists — and what we're focused on today.</div>
+      <p class="body-copy">Right now, our focus is narrow and deliberate: an estimated foot scan, a rule-based Fit Check, and honest education. We're not trying to be everything at once. We'd rather get the measurement and guidance right first.</p>
+      <div class="hierarchy">
+        <span class="h-node mono">The Badger Co.</span><span class="h-arrow">→</span>
+        <span class="h-node mono">Badger Fit</span><span class="h-arrow">→</span>
+        <span class="h-node dim mono">Vault</span><span class="h-arrow">→</span>
+        <span class="h-node dim mono">Future Badger Footwear</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" id="future-footwear">
+      <div class="timeline-marker"><span class="timeline-marker-dot"></span></div>
+      <div class="tag timeline-eyebrow">Tomorrow</div>
+      <div class="timeline-title serif">The long-term vision.</div>
+      <p class="body-copy">With consent, careful validation and sufficient evidence, anonymised fit patterns from Badger Fit may eventually inform premium, vegan Badger footwear designed around real user needs rather than assumptions. This is a long-term direction, not a current product. Nothing is available for sale today, and we will not promote shoes as available until that changes.</p>
+    </div>
   </div>
-</section>
-
-<section class="sec" id="future-footwear">
-  <div class="sec-title serif">The long-term vision.</div>
-  <p class="body-copy">With consent, careful validation and sufficient evidence, anonymised fit patterns from Badger Fit may eventually inform premium, vegan Badger footwear designed around real user needs rather than assumptions. This is a long-term direction, not a current product. Nothing is available for sale today, and we will not promote shoes as available until that changes.</p>
 </section>
 
 <section class="sec">
@@ -156,9 +170,7 @@ footer{padding:2rem 1.75rem;display:flex;justify-content:space-between;align-ite
     <div class="site-footer-group">
       <div class="site-footer-heading">Contact</div>
       <div class="site-footer-links">
-        <span class="site-footer-link">Contact</span>
-        <a href="mailto:support@thebadgerco.in" class="site-footer-link">support@thebadgerco.in</a>
-        <a href="tel:+91919626285" class="site-footer-link">+91 919626285</a>
+        <details class="contact-details"><summary class="site-footer-link contact-summary">Contact</summary><div class="contact-detail-list"><div class="contact-detail"><span class="contact-label mono">Email</span><a href="mailto:support@thebadgerco.in" class="site-footer-link">support@thebadgerco.in</a></div><div class="contact-detail"><span class="contact-label mono">Phone</span><a href="tel:+91919626285" class="site-footer-link">+91 919626285</a></div></div></details>
         <a href="privacy.html" class="site-footer-link">Privacy</a>
         <a href="terms.html" class="site-footer-link">Terms</a>
       </div>
@@ -170,6 +182,7 @@ footer{padding:2rem 1.75rem;display:flex;justify-content:space-between;align-ite
 
 <script src="site-navigation.js"></script>
 <script src="site-mobile-enhancements.js"></script>
+<script src="site-timeline.js"></script>
 </body>
 </html>
 

@@ -94,10 +94,26 @@ footer{padding:2rem 1.25rem;display:flex;justify-content:space-between;align-ite
 
 <section class="sec">
   <div class="sec-hd"><div><div class="tag" style="margin-bottom:.6rem">Three Steps</div><h2 class="sec-title serif">The planned journey.</h2></div><div class="sec-n mono">01</div></div>
-  <div class="flow process-flow">
-    <div class="fc"><div class="fn mono">Step 01</div><div class="ft2 serif">Understand your feet</div><p class="fs mono">Start with the foot itself so the fit question has better context than a shoe size alone.</p></div>
-    <div class="fc"><div class="fn mono">Step 02</div><div class="ft2 serif">Learn your fit and footwear needs</div><p class="fs mono">Translate discomfort, shape and fit signals into something easier to act on.</p></div>
-    <div class="fc"><div class="fn mono">Step 03</div><div class="ft2 serif">Discover how Badger Fit can help</div><p class="fs mono">Use that understanding to make more informed footwear decisions and know what to explore next.</p></div>
+  <div class="timeline" data-timeline>
+    <div class="timeline-track"><div class="timeline-track-fill" data-timeline-fill></div></div>
+    <div class="timeline-item">
+      <div class="timeline-marker">1</div>
+      <div class="fn mono">Step 01</div>
+      <div class="ft2 serif">Understand your feet</div>
+      <p class="fs mono">Start with the foot itself so the fit question has better context than a shoe size alone.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker">2</div>
+      <div class="fn mono">Step 02</div>
+      <div class="ft2 serif">Learn your fit and footwear needs</div>
+      <p class="fs mono">Translate discomfort, shape and fit signals into something easier to act on.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker">3</div>
+      <div class="fn mono">Step 03</div>
+      <div class="ft2 serif">Discover how Badger Fit can help</div>
+      <p class="fs mono">Use that understanding to make more informed footwear decisions and know what to explore next.</p>
+    </div>
   </div>
 </section>
 
@@ -138,9 +154,7 @@ footer{padding:2rem 1.25rem;display:flex;justify-content:space-between;align-ite
     <div class="site-footer-group">
       <div class="site-footer-heading">Contact</div>
       <div class="site-footer-links">
-        <span class="site-footer-link">Contact</span>
-        <a href="mailto:support@thebadgerco.in" class="site-footer-link">support@thebadgerco.in</a>
-        <a href="tel:+91919626285" class="site-footer-link">+91 919626285</a>
+        <details class="contact-details"><summary class="site-footer-link contact-summary">Contact</summary><div class="contact-detail-list"><div class="contact-detail"><span class="contact-label mono">Email</span><a href="mailto:support@thebadgerco.in" class="site-footer-link">support@thebadgerco.in</a></div><div class="contact-detail"><span class="contact-label mono">Phone</span><a href="tel:+91919626285" class="site-footer-link">+91 919626285</a></div></div></details>
         <a href="privacy.html" class="site-footer-link">Privacy</a>
         <a href="terms.html" class="site-footer-link">Terms</a>
       </div>
@@ -152,6 +166,7 @@ footer{padding:2rem 1.25rem;display:flex;justify-content:space-between;align-ite
 
 <script src="site-navigation.js"></script>
 <script src="site-mobile-enhancements.js"></script>
+<script src="site-timeline.js"></script>
 </body>
 </html>
 
