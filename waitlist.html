@@ -30,7 +30,7 @@ footer{padding:2rem clamp(1rem,6vw,6rem);border-top:1px solid var(--rule);displa
 <link rel="stylesheet" href="site-mobile-overrides.css">
 </head>
 <body>
-<nav class="site-nav" data-site-nav><a href="index.html" class="nav-logo" aria-label="The Badger Co. home"><picture><source srcset="bflogo.webp" type="image/webp"><img src="bflogo.png" alt="The Badger Co."></picture></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu" data-nav-toggle>Menu</button><div id="site-menu" class="nav-panel" data-nav-panel><div class="nav-menu" data-nav-menu><div class="nav-head"><button class="nav-close" type="button" aria-label="Close navigation menu" data-nav-close>Close</button></div><div class="nav-links"><a href="badgerfit.html" class="nav-link" data-nav-link>App</a><a href="how-it-works.html" class="nav-link" data-nav-link>How It Works</a><a href="vault.html" class="nav-link" data-nav-link>Vault</a><a href="about.html" class="nav-link" data-nav-link>About</a></div><a href="waitlist.html" class="nav-cta" aria-current="page" data-nav-link>Join Waitlist</a></div></div></nav>
+<nav class="site-nav" data-site-nav><a href="index.html" class="nav-logo" aria-label="The Badger Co. home"><picture><source srcset="bflogo.webp" type="image/webp"><img src="bflogo.png" alt="The Badger Co."></picture></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu" data-nav-toggle>Menu</button><div id="site-menu" class="nav-panel" data-nav-panel><div class="nav-menu" data-nav-menu><div class="nav-head"><button class="nav-close" type="button" aria-label="Close navigation menu" data-nav-close>Close</button></div><div class="nav-links"><a href="badgerfit.html" class="nav-link" data-nav-link>App</a><a href="vault.html" class="nav-link" data-nav-link>Vault</a><a href="about.html" class="nav-link" data-nav-link>About</a></div><a href="waitlist.html" class="nav-cta" aria-current="page" data-nav-link>Join Waitlist</a></div></div></nav>
 <main class="shell">
   <section class="card">
     <div class="tag">Pre-Launch Waitlist</div>
@@ -45,7 +45,7 @@ footer{padding:2rem clamp(1rem,6vw,6rem);border-top:1px solid var(--rule);displa
       <p class="note">This pre-launch preview demonstrates the waitlist flow in the browser while the production signup connection is being prepared.</p>
       <div class="actions">
         <button type="submit" class="btn">Join the Badger Fit Waitlist</button>
-        <a href="how-it-works.html" class="btn secondary">See How It Works</a>
+        <a href="badgerfit.html" class="btn secondary">See How It Works</a>
       </div>
     </form>
     <div id="waitlistSuccess" class="success" aria-live="polite">
@@ -55,12 +55,80 @@ footer{padding:2rem clamp(1rem,6vw,6rem);border-top:1px solid var(--rule);displa
     </div>
   </section>
 </main>
-<footer class="site-footer"><div class="site-footer-grid"><div class="site-footer-group"><div class="site-footer-heading">Explore</div><div class="site-footer-links"><a href="badgerfit.html" class="site-footer-link">App</a><a href="how-it-works.html" class="site-footer-link">How It Works</a><a href="vault.html" class="site-footer-link">Vault</a><a href="about.html" class="site-footer-link">About</a></div></div><div class="site-footer-group"><div class="site-footer-heading">Follow</div><div class="site-footer-links"><a href="https://x.com/TheBadgerCoIN" class="site-footer-link" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.linkedin.com/company/123393979/" class="site-footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.instagram.com/the.badger.co/" class="site-footer-link" target="_blank" rel="noopener noreferrer">Instagram — The Badger Co.</a><a href="https://www.instagram.com/thebadgerfitapp/" class="site-footer-link" target="_blank" rel="noopener noreferrer">Instagram — Badger Fit</a></div></div><div class="site-footer-group"><div class="site-footer-heading">Contact</div><div class="site-footer-links"><details class="contact-details"><summary class="site-footer-link contact-summary">Contact</summary><div class="contact-detail-list"><div class="contact-detail"><span class="contact-label mono">Email</span><a href="mailto:support@thebadgerco.in" class="site-footer-link">support@thebadgerco.in</a></div><div class="contact-detail"><span class="contact-label mono">Phone</span><a href="tel:+91919626285" class="site-footer-link">+91 919626285</a></div></div></details><a href="privacy.html" class="site-footer-link">Privacy</a><a href="terms.html" class="site-footer-link">Terms</a></div></div></div><div class="site-footer-wordmark"><picture><source srcset="TBCL.webp" type="image/webp"><img src="TBCL.png" alt="The Badger Co." width="1920" height="819" loading="lazy" decoding="async"></picture></div><div class="site-footer-meta">© 2026 The Badger Co.</div></footer>
+<footer class="site-footer">
+  <div class="site-footer-top">
+    <div class="site-footer-wordmark"><picture><source srcset="TBCL.webp" type="image/webp"><img src="TBCL.png" alt="The Badger Co." width="1920" height="819" loading="lazy" decoding="async"></picture></div>
+    <div class="site-footer-cta-row">
+      <div class="site-footer-signup">
+        <div class="site-footer-heading">Get updates on Badger Fit</div>
+        <form class="footer-signup-form" data-footer-signup novalidate>
+          <label class="visually-hidden" for="footerEmail">Email address</label>
+          <input type="email" id="footerEmail" name="email" class="footer-signup-input" placeholder="Enter your email address" required autocomplete="email">
+          <button type="submit" class="footer-signup-submit" aria-label="Join the waitlist"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <p class="footer-signup-note" data-footer-signup-note hidden></p>
+      </div>
+      <div class="site-footer-social">
+        <div class="site-footer-heading">Follow us</div>
+        <div class="site-footer-social-icons">
+          <a href="https://x.com/TheBadgerCoIN" class="site-footer-icon" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4 22H1l8.1-9.3L1 2h7.3l5.1 6.7L18.9 2Zm-1.3 18h2L7.5 4h-2l12.1 16Z"/></svg></a>
+          <a href="https://www.linkedin.com/company/123393979/" class="site-footer-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3a1.96 1.96 0 1 0 0 3.92A1.96 1.96 0 0 0 5.25 3ZM20.45 20h-3.37v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V20H9.68V8.5h3.24v1.57h.05c.45-.85 1.56-1.75 3.21-1.75 3.43 0 4.27 2.26 4.27 5.19V20Z"/></svg></a>
+          <a href="https://www.instagram.com/the.badger.co/" class="site-footer-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram — The Badger Co."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2Zm0 1.8c-2.67 0-2.99.01-4.04.06-.87.04-1.34.18-1.65.3-.41.16-.71.35-1.02.66-.31.31-.5.61-.66 1.02-.12.31-.26.78-.3 1.65C4.28 8.5 4.27 8.83 4.27 11.5s.01 3 .06 4.05c.04.87.18 1.34.3 1.65.16.41.35.71.66 1.02.31.31.61.5 1.02.66.31.12.78.26 1.65.3 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.87-.04 1.34-.18 1.65-.3.41-.16.71-.35 1.02-.66.31-.31.5-.61.66-1.02.12-.31.26-.78.3-1.65.05-1.05.06-1.37.06-4.05s-.01-2.99-.06-4.04c-.04-.87-.18-1.34-.3-1.65a2.7 2.7 0 0 0-.66-1.02 2.7 2.7 0 0 0-1.02-.66c-.31-.12-.78-.26-1.65-.3-1.05-.05-1.37-.06-4.04-.06Zm0 4.6a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm4.8-1.98a1.08 1.08 0 1 1 0-2.16 1.08 1.08 0 0 1 0 2.16Z"/></svg></a>
+          <a href="https://www.instagram.com/thebadgerfitapp/" class="site-footer-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram — Badger Fit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2Zm0 1.8c-2.67 0-2.99.01-4.04.06-.87.04-1.34.18-1.65.3-.41.16-.71.35-1.02.66-.31.31-.5.61-.66 1.02-.12.31-.26.78-.3 1.65C4.28 8.5 4.27 8.83 4.27 11.5s.01 3 .06 4.05c.04.87.18 1.34.3 1.65.16.41.35.71.66 1.02.31.31.61.5 1.02.66.31.12.78.26 1.65.3 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.87-.04 1.34-.18 1.65-.3.41-.16.71-.35 1.02-.66.31-.31.5-.61.66-1.02.12-.31.26-.78.3-1.65.05-1.05.06-1.37.06-4.05s-.01-2.99-.06-4.04c-.04-.87-.18-1.34-.3-1.65a2.7 2.7 0 0 0-.66-1.02 2.7 2.7 0 0 0-1.02-.66c-.31-.12-.78-.26-1.65-.3-1.05-.05-1.37-.06-4.04-.06Zm0 4.6a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm4.8-1.98a1.08 1.08 0 1 1 0-2.16 1.08 1.08 0 0 1 0 2.16Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-divider"></div>
+  <div class="site-footer-grid">
+    <div class="site-footer-group">
+      <div class="site-footer-heading">Support</div>
+      <div class="site-footer-links">
+        <details class="contact-details"><summary class="site-footer-link contact-summary">Contact</summary><div class="contact-detail-list"><div class="contact-detail"><span class="contact-label mono">Email</span><a href="mailto:support@thebadgerco.in" class="site-footer-link">support@thebadgerco.in</a></div><div class="contact-detail"><span class="contact-label mono">Phone</span><a href="tel:+91919626285" class="site-footer-link">+91 919626285</a></div></div></details>
+        <a href="badgerfit.html#faq" class="site-footer-link">FAQs</a>
+      </div>
+    </div>
+    <div class="site-footer-group">
+      <div class="site-footer-heading">Legal</div>
+      <div class="site-footer-links">
+        <a href="privacy.html" class="site-footer-link">Privacy</a>
+        <a href="terms.html" class="site-footer-link">Terms</a>
+      </div>
+    </div>
+    <div class="site-footer-group">
+      <div class="site-footer-heading">Company</div>
+      <div class="site-footer-links">
+        <a href="badgerfit.html" class="site-footer-link">App</a>
+        
+        <a href="vault.html" class="site-footer-link">Vault</a>
+        <a href="about.html" class="site-footer-link">About</a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-meta">&copy; 2026 The Badger Co.</div>
+</footer>
 <script src="site-navigation.js"></script>
 <script src="site-mobile-enhancements.js"></script>
+<script src="site-footer-signup.js"></script>
 <script>
+// Endpoint is configured once, shared with the footer signup box — see
+// site-footer-signup.js (WAITLIST-SETUP.md has the one-time setup steps).
+var WAITLIST_ENDPOINT = window.BADGER_WAITLIST_ENDPOINT || '';
+
 var form=document.getElementById('waitlistForm'),success=document.getElementById('waitlistSuccess');
-form.addEventListener('submit',function(e){e.preventDefault();var data={name:form.name.value.trim(),email:form.email.value.trim(),interest:form.interest.value.trim(),savedAt:new Date().toISOString()};localStorage.setItem('badgerfit_waitlist_preview',JSON.stringify(data));form.reset();success.classList.add('show');success.scrollIntoView({behavior:'smooth',block:'start'});});
+var prefillEmail=new URLSearchParams(window.location.search).get('email');
+if(prefillEmail){form.email.value=prefillEmail;form.name.focus();}
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var data={name:form.name.value.trim(),email:form.email.value.trim(),interest:form.interest.value.trim(),source:'waitlist_page',savedAt:new Date().toISOString()};
+  localStorage.setItem('badgerfit_waitlist_preview',JSON.stringify(data));
+  if(WAITLIST_ENDPOINT){
+    fetch(WAITLIST_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)}).catch(function(){});
+  }
+  form.reset();
+  success.classList.add('show');
+  success.scrollIntoView({behavior:'smooth',block:'start'});
+});
 </script>
 </body>
 </html>

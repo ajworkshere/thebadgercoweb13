@@ -3,171 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#000000">
-<link rel="icon" type="image/png" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>How Badger Fit Works | Pre-Launch Walkthrough</title>
-<meta name="description" content="See the planned three-step Badger Fit journey and how the future experience is intended to help with footwear-fit decisions before launch.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://thebadgerco.in/how-it-works.html">
-<meta property="og:title" content="How Badger Fit Works">
-<meta property="og:description" content="A concise pre-launch walkthrough of the future Badger Fit experience.">
-<meta property="og:url" content="https://thebadgerco.in/how-it-works.html">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta http-equiv="refresh" content="0; url=badgerfit.html">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://thebadgerco.in/badgerfit.html">
+<title>Redirecting to the App page | The Badger Co.</title>
+<meta name="description" content="How It Works is now part of the App page. Redirecting you there.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--blk:#000;--wht:#fff;--rule:rgba(255,255,255,.1);--muted:rgba(255,255,255,.58);--grey:#8A8A8A}
-html{scroll-behavior:smooth}
-body{background:var(--blk);color:var(--wht);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.5}
-.serif{font-family:'Playfair Display',serif}.mono{font-family:'IBM Plex Mono',monospace}
-.tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.42)}
-a{color:inherit}:focus-visible{outline:1.5px solid var(--grey);outline-offset:3px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.75rem;border-bottom:.5px solid var(--rule);background:rgba(0,0,0,.94);backdrop-filter:blur(8px)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--wht);text-decoration:none}
-.nav-toggle{display:none;background:transparent;border:.5px solid var(--rule);color:var(--wht);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:.55rem .9rem;cursor:pointer}
-.nav-panel{display:flex;align-items:center;gap:1.75rem}.nav-links{display:flex;gap:1.75rem;align-items:center}
-.nav-link{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none}
-.nav-link.active,.nav-link:hover{color:var(--wht)}
-.nav-cta{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blk);background:var(--wht);padding:.7rem 1.3rem;text-decoration:none;white-space:nowrap;border-radius:999px}
-.nav-close{display:none}
-@media(max-width:900px){.nav-toggle{display:block}.nav-panel{position:fixed;top:0;left:0;right:0;bottom:0;background:#000;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 2rem 2rem;gap:2rem;transform:translateX(100%);transition:transform .3s ease;z-index:200}.nav-panel.open{transform:translateX(0)}.nav-links{flex-direction:column;gap:1.75rem;align-items:flex-start;width:100%}.nav-link{font-size:14px}.nav-cta{width:100%;text-align:center;padding:1rem}.nav-close{display:block;position:absolute;top:1.5rem;right:1.75rem;background:none;border:.5px solid var(--rule);color:var(--wht);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:.55rem .9rem;cursor:pointer}}
-.page-header{padding:9.5rem clamp(1.25rem,6vw,6rem) 4rem;border-bottom:.5px solid var(--rule)}
-.page-title{font-family:'Playfair Display',serif;font-size:clamp(34px,5.5vw,64px);font-weight:900;line-height:1.02;margin:1rem 0 1.2rem;max-width:760px}
-.page-sub{font-size:14px;color:var(--muted);max-width:620px;line-height:1.85}
-.sec{padding:4.5rem clamp(1.25rem,6vw,6rem);border-bottom:.5px solid var(--rule)}
-.sec>*{max-width:1120px;margin-left:auto;margin-right:auto}
-.sec-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;gap:1rem;flex-wrap:wrap}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,40px);font-weight:900;line-height:1.06;max-width:660px}
-.sec-n{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.25);letter-spacing:.3em}
-.body-copy{font-size:14px;color:var(--muted);line-height:1.85;max-width:680px}
-.flow{display:grid;grid-template-columns:repeat(3,1fr);border:.5px solid var(--rule)}
-.fc{padding:1.6rem;border-right:.5px solid var(--rule);border-bottom:.5px solid var(--rule)}
-.fc:last-child{border-right:none}
-.fn{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.28);letter-spacing:.22em;margin-bottom:.9rem}
-.ft2{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:.55rem}
-.fs{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,.58);line-height:1.75}
-.compare{display:grid;grid-template-columns:1fr 1fr;border:.5px solid var(--rule)}.compare-col{padding:1.6rem;border-right:.5px solid var(--rule)}.compare-col:last-child{border-right:none}.compare-col h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:.8rem}.compare-col p{font-size:12px;color:var(--muted);line-height:1.8}
-.btn{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:1rem 1.45rem;text-decoration:none;border:.5px solid var(--wht);border-radius:999px;color:var(--wht);background:transparent}.btn:hover{background:var(--wht);color:var(--blk)}
-.disclaimer{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.34);letter-spacing:.08em;line-height:1.8}
-footer{padding:2rem 1.25rem;display:flex;justify-content:space-between;align-items:center;border-top:.5px solid var(--rule);flex-wrap:wrap;gap:1rem}
-.ft-logo{font-family:'Playfair Display',serif;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted)}
-.ft-links{display:flex;gap:1.25rem;flex-wrap:wrap}
-.ft-link{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none}
-.ft-copy{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.2)}
-@media(max-width:900px){.flow,.compare{grid-template-columns:1fr}.fc,.compare-col{border-right:none;border-bottom:.5px solid var(--rule)}.compare-col:last-child,.fc:last-child{border-bottom:none}}
-.nav-toggle,.nav-close{min-width:44px;min-height:44px}
-@media(max-width:900px){.nav-panel{visibility:hidden}.nav-panel.open{visibility:visible}.nav-link{min-height:44px;display:flex;align-items:center}.ft-link{min-height:44px;display:inline-flex;align-items:center}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
-@media(min-width:901px){nav{top:1rem;left:clamp(1rem,3vw,2.5rem);right:clamp(1rem,3vw,2.5rem);max-width:1280px;margin:0 auto;padding:.78rem .85rem .78rem 1.35rem;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(10,10,10,.84);box-shadow:0 16px 48px rgba(0,0,0,.28)}}
-@media(max-width:900px){nav{top:.75rem;left:.75rem;right:.75rem;padding:.7rem 1rem;border:1px solid rgba(255,255,255,.13);border-radius:16px;background:rgba(10,10,10,.92)}.nav-panel{border-radius:0}.sec,.page-header{padding-left:1rem;padding-right:1rem}}
-.nav-logo{display:block;width:150px;height:38px;flex:0 0 150px;font-size:0!important;letter-spacing:0!important;overflow:hidden}
+body{background:#000;color:#fff;font-family:'Inter',Arial,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;line-height:1.6}
+a{color:#fff}
+p{font-size:14px;color:rgba(255,255,255,.68)}
 </style>
-<link rel="stylesheet" href="site-overrides.css">
-<link rel="stylesheet" href="site-mobile-overrides.css">
 </head>
 <body>
-<nav class="site-nav" data-site-nav>
-  <a href="index.html" class="nav-logo serif" aria-label="The Badger Co. home"><picture><source srcset="bflogo.webp" type="image/webp"><img src="bflogo.png" alt="The Badger Co."></picture></a>
-  <button class="nav-toggle mono" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu" data-nav-toggle>Menu</button>
-  <div id="site-menu" class="nav-panel" data-nav-panel>
-    <div class="nav-menu" data-nav-menu>
-      <div class="nav-head">
-        <button class="nav-close mono" type="button" aria-label="Close navigation menu" data-nav-close>Close</button>
-      </div>
-      <div class="nav-links">
-        <a href="badgerfit.html" class="nav-link mono" data-nav-link>App</a>
-        <a href="how-it-works.html" class="nav-link mono" aria-current="page" data-nav-link>How It Works</a>
-        <a href="vault.html" class="nav-link mono" data-nav-link>Vault</a>
-        <a href="about.html" class="nav-link mono" data-nav-link>About</a>
-      </div>
-      <a href="waitlist.html" class="nav-cta mono" data-nav-link>Join Waitlist</a>
-    </div>
-  </div>
-</nav>
-<header class="page-header">
-  <div class="tag" style="margin-bottom:1rem">Concise Walkthrough</div>
-  <h1 class="page-title serif">How Badger Fit is being designed to work.</h1>
-  <p class="page-sub">The pre-launch concept is intentionally simple: help people understand their feet, learn what fit or footwear needs may matter, and discover how Badger Fit could help before the next purchase.</p>
-</header>
-
-<section class="sec">
-  <div class="sec-hd"><div><div class="tag" style="margin-bottom:.6rem">Three Steps</div><h2 class="sec-title serif">The planned journey.</h2></div><div class="sec-n mono">01</div></div>
-  <div class="timeline" data-timeline>
-    <div class="timeline-track"><div class="timeline-track-fill" data-timeline-fill></div></div>
-    <div class="timeline-item">
-      <div class="timeline-marker">1</div>
-      <div class="fn mono">Step 01</div>
-      <div class="ft2 serif">Understand your feet</div>
-      <p class="fs mono">Start with the foot itself so the fit question has better context than a shoe size alone.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-marker">2</div>
-      <div class="fn mono">Step 02</div>
-      <div class="ft2 serif">Learn your fit and footwear needs</div>
-      <p class="fs mono">Translate discomfort, shape and fit signals into something easier to act on.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-marker">3</div>
-      <div class="fn mono">Step 03</div>
-      <div class="ft2 serif">Discover how Badger Fit can help</div>
-      <p class="fs mono">Use that understanding to make more informed footwear decisions and know what to explore next.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="sec-hd"><div><div class="tag" style="margin-bottom:.6rem">Two Product Paths</div><h2 class="sec-title serif">Two ways the future experience may begin.</h2></div><div class="sec-n mono">02</div></div>
-  <div class="compare">
-    <div class="compare-col"><h3>Understand your feet</h3><p>The future scan path is intended to help people build clearer fit context and understand why a single size label often falls short.</p></div>
-    <div class="compare-col"><h3>Understand one uncomfortable shoe</h3><p>The planned Fit Check path is intended to help people focus on one shoe problem at a time and discover what may be worth trying next.</p></div>
-  </div>
-</section>
-
-<section class="sec" style="border-bottom:none">
-  <p class="body-copy" style="max-width:680px">Badger Fit is still pre-launch. This walkthrough explains the direction honestly and keeps the promise simple: clearer fit understanding first, richer product detail second, and a waitlist for people who want launch updates.</p>
-  <a href="waitlist.html" class="btn mono" style="margin-top:1.5rem">Join the Badger Fit Waitlist</a>
-  <p class="disclaimer" style="margin-top:1.25rem">Educational product concept only. No medical diagnosis, no invented proof, and no launch-date claim here.</p>
-</section>
-
-<footer class="site-footer">
-  <div class="site-footer-grid">
-    <div class="site-footer-group">
-      <div class="site-footer-heading">Explore</div>
-      <div class="site-footer-links">
-        <a href="badgerfit.html" class="site-footer-link">App</a>
-        <a href="how-it-works.html" class="site-footer-link">How It Works</a>
-        <a href="vault.html" class="site-footer-link">Vault</a>
-        <a href="about.html" class="site-footer-link">About</a>
-      </div>
-    </div>
-    <div class="site-footer-group">
-      <div class="site-footer-heading">Follow</div>
-      <div class="site-footer-links">
-        <a href="https://x.com/TheBadgerCoIN" class="site-footer-link" target="_blank" rel="noopener noreferrer">X</a>
-        <a href="https://www.linkedin.com/company/123393979/" class="site-footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.instagram.com/the.badger.co/" class="site-footer-link" target="_blank" rel="noopener noreferrer">Instagram — The Badger Co.</a>
-        <a href="https://www.instagram.com/thebadgerfitapp/" class="site-footer-link" target="_blank" rel="noopener noreferrer">Instagram — Badger Fit</a>
-      </div>
-    </div>
-    <div class="site-footer-group">
-      <div class="site-footer-heading">Contact</div>
-      <div class="site-footer-links">
-        <details class="contact-details"><summary class="site-footer-link contact-summary">Contact</summary><div class="contact-detail-list"><div class="contact-detail"><span class="contact-label mono">Email</span><a href="mailto:support@thebadgerco.in" class="site-footer-link">support@thebadgerco.in</a></div><div class="contact-detail"><span class="contact-label mono">Phone</span><a href="tel:+91919626285" class="site-footer-link">+91 919626285</a></div></div></details>
-        <a href="privacy.html" class="site-footer-link">Privacy</a>
-        <a href="terms.html" class="site-footer-link">Terms</a>
-      </div>
-    </div>
-  </div>
-  <div class="site-footer-wordmark"><picture><source srcset="TBCL.webp" type="image/webp"><img src="TBCL.png" alt="The Badger Co." width="1920" height="819" loading="lazy" decoding="async"></picture></div>
-  <div class="site-footer-meta">© 2026 The Badger Co.</div>
-</footer>
-
-<script src="site-navigation.js"></script>
-<script src="site-mobile-enhancements.js"></script>
-<script src="site-timeline.js"></script>
+<p>How It Works is now part of the App page. Redirecting you&hellip;<br>If nothing happens, <a href="badgerfit.html">continue to the App page</a>.</p>
 </body>
 </html>
-
-

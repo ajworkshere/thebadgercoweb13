@@ -299,7 +299,6 @@ textarea {
     height: clamp(240px, 72vw, 380px) !important;
   }
 
-  .hero-title,
   .page-title,
   .article-head h1,
   .answer-strip h2,
