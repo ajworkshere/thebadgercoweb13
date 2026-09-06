@@ -215,13 +215,24 @@ textarea {
   min-height: 100dvh;
 }
 
-.site-nav .nav-panel,
-.site-nav .nav-menu {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
 @media (max-width: 900px) {
+  /*
+   * overflow:auto only makes sense while .nav-panel/.nav-menu is the
+   * full-screen mobile overlay, so a taller-than-viewport menu can scroll.
+   * Left unscoped, it also landed on the desktop layout, where .nav-panel
+   * and .nav-menu are ordinary in-flow flex rows: any descendant that pokes
+   * a few px past the row's own box (e.g. .nav-link::after's underline,
+   * positioned at bottom:-0.45rem, once transform: scaleX(1) makes it the
+   * current-page underline) then reads as scrollable overflow and Chromium
+   * paints a real vertical scrollbar at the row's right edge, next to
+   * .nav-cta. Scoped to mobile so the fix doesn't reappear at 900px+.
+   */
+  .site-nav .nav-panel,
+  .site-nav .nav-menu {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   /*
    * min-height:100dvh only makes sense while .nav-panel is the full-screen
    * mobile overlay. Left unscoped, it forced .nav-panel (an ordinary
