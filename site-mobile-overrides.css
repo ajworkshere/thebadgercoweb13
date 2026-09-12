@@ -1,0 +1,422 @@
+:root {
+  --page-gutter: max(1rem, env(safe-area-inset-left));
+  --page-gutter-right: max(1rem, env(safe-area-inset-right));
+  --page-gutter-wide: clamp(1rem, 4vw, 1.5rem);
+  --safe-top-space: max(0.75rem, calc(env(safe-area-inset-top) + 0.25rem));
+  --safe-bottom-space: max(1rem, env(safe-area-inset-bottom));
+}
+
+html {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: clip;
+  text-wrap: pretty;
+}
+
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+main,
+section,
+article,
+aside,
+header,
+footer,
+form,
+.hero-inner,
+.page-header-inner,
+.layout,
+.feature-copy,
+.path-card,
+.guide-card,
+.feature-card,
+.card,
+.check-card,
+.header-note,
+.hero-note,
+.toc,
+.content,
+.site-footer-grid,
+.site-footer-group {
+  min-width: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video,
+canvas {
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  font-size: max(16px, 1rem);
+}
+
+.site-nav .nav-logo,
+.nav-logo {
+  min-height: 44px;
+  height: 44px;
+  width: clamp(132px, 28vw, 150px);
+  flex-basis: clamp(132px, 28vw, 150px);
+  padding-block: 0.125rem;
+}
+
+.nav-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.site-nav .nav-links {
+  align-items: stretch;
+}
+
+.site-nav .nav-link,
+.site-nav .nav-cta,
+.site-nav .nav-toggle,
+.site-nav .nav-close,
+.btn,
+.site-footer-link,
+.path-card a,
+.text-link,
+.crumb,
+.content a,
+.toc a,
+.read {
+  min-height: 44px;
+}
+
+.site-nav .nav-link,
+.site-footer-link,
+.path-card a,
+.text-link,
+.crumb,
+.content a,
+.toc a,
+.read {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-nav .nav-link {
+  padding-inline: 0.35rem;
+}
+
+.site-footer-link {
+  min-width: 44px;
+  padding-right: 0.35rem;
+}
+
+.path-card a,
+.text-link,
+.crumb,
+.content a,
+.toc a,
+.read {
+  text-decoration: none;
+}
+
+.text-link,
+.path-card a,
+.content a,
+.crumb {
+  padding-block: 0.35rem;
+}
+
+.prototype-phone {
+  aspect-ratio: 551 / 1234;
+  width: min(100%, 340px);
+  height: auto;
+  max-height: min(72svh, 500px);
+}
+
+.feature-media,
+.article-visual-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-media img,
+.article-visual-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-media img {
+  object-position: center 42%;
+}
+
+.article-visual-media.toe img {
+  object-position: center 28%;
+}
+
+.article-visual-media.heel img {
+  object-position: center 78%;
+}
+
+.article-visual-media.width img {
+  object-position: center 42%;
+}
+
+.featured-card {
+  align-items: stretch;
+}
+
+.feature-media {
+  min-height: 100%;
+  background: #090909;
+}
+
+.feature-copy {
+  gap: 0.6rem;
+}
+
+.visual {
+  background: #0a0a0a !important;
+}
+
+.visual::before,
+.visual::after {
+  display: none !important;
+}
+
+.article-visual-media {
+  height: 100%;
+}
+
+.shell {
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+
+@media (max-width: 900px) {
+  /*
+   * overflow:auto only makes sense while .nav-panel/.nav-menu is the
+   * full-screen mobile overlay, so a taller-than-viewport menu can scroll.
+   * Left unscoped, it also landed on the desktop layout, where .nav-panel
+   * and .nav-menu are ordinary in-flow flex rows: any descendant that pokes
+   * a few px past the row's own box (e.g. .nav-link::after's underline,
+   * positioned at bottom:-0.45rem, once transform: scaleX(1) makes it the
+   * current-page underline) then reads as scrollable overflow and Chromium
+   * paints a real vertical scrollbar at the row's right edge, next to
+   * .nav-cta. Scoped to mobile so the fix doesn't reappear at 900px+.
+   */
+  .site-nav .nav-panel,
+  .site-nav .nav-menu {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /*
+   * min-height:100dvh only makes sense while .nav-panel is the full-screen
+   * mobile overlay. Left unscoped, it forced .nav-panel (an ordinary
+   * in-flow flex child at desktop) to stretch .site-nav to page height,
+   * ballooning the rounded pill into a giant capsule behind the hero.
+   */
+  .site-nav .nav-panel {
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
+
+  .site-nav .nav-menu {
+    min-height: 100%;
+  }
+
+  .site-nav {
+    top: var(--safe-top-space);
+    left: max(0.75rem, calc(env(safe-area-inset-left) + 0.25rem));
+    right: max(0.75rem, calc(env(safe-area-inset-right) + 0.25rem));
+    gap: 0.75rem;
+  }
+
+  .site-nav .nav-logo,
+  .nav-logo {
+    width: min(42vw, 132px);
+    flex-basis: min(42vw, 132px);
+  }
+
+  .site-nav .nav-panel {
+    padding-bottom: max(0.85rem, env(safe-area-inset-bottom));
+  }
+
+  .site-nav .nav-menu {
+    width: min(calc(100% - 1rem), 30rem);
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .site-nav .nav-links {
+    gap: 0;
+  }
+
+  .site-nav .nav-link {
+    justify-content: space-between;
+    padding-inline: 0.25rem;
+  }
+
+  .hero,
+  .page-header,
+  .article-hero,
+  .sec,
+  .answer-strip,
+  .cta,
+  .shell {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter-right);
+  }
+
+  .shell {
+    padding-top: max(9rem, calc(env(safe-area-inset-top) + 7.5rem));
+    padding-bottom: max(2.5rem, calc(env(safe-area-inset-bottom) + 1.5rem));
+  }
+
+  .layout {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter-right);
+    gap: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .visual {
+    margin-left: var(--page-gutter) !important;
+    margin-right: var(--page-gutter-right) !important;
+    margin-bottom: 3rem !important;
+    height: clamp(240px, 72vw, 380px) !important;
+  }
+
+  .page-title,
+  .article-head h1,
+  .answer-strip h2,
+  .cta h2 {
+    font-size: clamp(2rem, 8.5vw, 3.75rem);
+  }
+
+  .feature-copy h3,
+  .hero-note h2,
+  .header-note h2 {
+    font-size: clamp(1.6rem, 6.2vw, 2.4rem);
+  }
+
+  .body-copy,
+  .hero-sub,
+  .page-sub,
+  .lead,
+  .dek,
+  .feature-copy p,
+  .content p,
+  .content li {
+    max-width: none;
+  }
+
+  .featured-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .feature-media {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .feature-copy {
+    padding: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .check,
+  .check-grid,
+  .guide-grid,
+  .path-grid,
+  .feature-grid {
+    gap: 0.85rem;
+  }
+
+  .card,
+  .feature-card,
+  .path-card,
+  .guide-card,
+  .trust-card,
+  .header-note,
+  .hero-note,
+  .visual,
+  .feature-media,
+  .featured-card {
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-nav {
+    padding: 0.75rem 0.875rem;
+  }
+
+  .hero,
+  .page-header,
+  .article-hero,
+  .sec,
+  .answer-strip,
+  .cta,
+  .shell,
+  .layout {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .feature-media {
+    aspect-ratio: 5 / 4;
+  }
+
+  .visual {
+    height: clamp(220px, 84vw, 320px) !important;
+  }
+
+  .site-footer {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(1.75rem, calc(env(safe-area-inset-bottom) + 0.75rem));
+  }
+}
+
+@media (hover: none) {
+  .site-nav .nav-link:hover::after,
+  .site-nav .nav-cta:hover,
+  .site-footer-link:hover {
+    transform: none;
+    color: inherit;
+    background: initial;
+  }
+}
+
+.site-nav .nav-link,
+.site-footer-link,
+.path-card a,
+.text-link,
+.crumb,
+.content a,
+.toc a {
+  min-width: 44px;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Shoe Fit Check | BadgerFit by The Badger Co.</title>
+<meta name="description" content="Meet Shoe Fit Check by BadgerFit. Describe an uncomfortable shoe and explore what to try first, what to avoid, and when to seek professional help. Early beta.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://thebadgerco.in/badgerfit.html">
+<meta property="og:title" content="Shoe Fit Check | BadgerFit by The Badger Co.">
+<meta property="og:description" content="Meet Shoe Fit Check by BadgerFit. Describe an uncomfortable shoe and explore what to try first, what to avoid, and when to seek professional help. Early beta.">
+<meta property="og:url" content="https://thebadgerco.in/badgerfit.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thebadgerco.in/TBCL.png">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="819">
+<meta property="og:image:alt" content="The Badger Co. wordmark">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shoe Fit Check | BadgerFit by The Badger Co.">
+<meta name="twitter:description" content="Meet Shoe Fit Check by BadgerFit. Describe an uncomfortable shoe and explore what to try first, what to avoid, and when to seek professional help. Early beta.">
+<meta name="twitter:image" content="https://thebadgerco.in/TBCL.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blk:#000;--wht:#fff;--rule:rgba(255,255,255,.1);--muted:rgba(255,255,255,.58);--grey:#8A8A8A}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+body{background:var(--blk);color:var(--wht);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.5;animation:pageFadeIn .4s ease both}
+@keyframes pageFadeIn{from{opacity:0}to{opacity:1}}
+.serif{font-family:'Playfair Display',serif}.mono{font-family:'IBM Plex Mono',monospace}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+a{color:inherit}:focus-visible{outline:1.5px solid var(--grey);outline-offset:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.75rem;border-bottom:.5px solid var(--rule);background:rgba(0,0,0,.94);backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--wht);text-decoration:none}
+.nav-toggle{display:none;background:transparent;border:.5px solid var(--rule);color:var(--wht);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:.55rem .9rem;cursor:pointer}
+.nav-panel{display:flex;align-items:center;gap:1.75rem}.nav-links{display:flex;gap:1.75rem;align-items:center}
+.nav-link{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;position:relative}
+.nav-link.active,.nav-link:hover{color:var(--wht)}
+.nav-cta{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blk);background:var(--wht);padding:.7rem 1.3rem;text-decoration:none;white-space:nowrap;border-radius:999px}
+.nav-close{display:none}
+@media(max-width:900px){.nav-toggle{display:block}.nav-panel{position:fixed;top:0;left:0;right:0;bottom:0;background:#000;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 2rem 2rem;gap:2rem;transform:translateX(100%);transition:transform .3s ease;z-index:200}.nav-panel.open{transform:translateX(0)}.nav-links{flex-direction:column;gap:1.75rem;align-items:flex-start;width:100%}.nav-link{font-size:14px}.nav-cta{width:100%;text-align:center;padding:1rem}.nav-close{display:block;position:absolute;top:1.5rem;right:1.75rem;background:none;border:.5px solid var(--rule);color:var(--wht);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:.55rem .9rem;cursor:pointer}}
+.page-header{padding:9.5rem clamp(1.25rem,6vw,6rem) 4rem;border-bottom:.5px solid var(--rule)}
+.page-header-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.85fr);gap:2rem;align-items:end}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(34px,5.5vw,64px);font-weight:900;line-height:1.02;margin:1rem 0 1.2rem}
+.page-sub{font-size:14px;color:var(--muted);max-width:560px;line-height:1.85}
+.header-note{padding:1.35rem;border:1px solid var(--rule);border-radius:24px;background:rgba(255,255,255,.02)}
+.header-note h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;line-height:1.08;margin-bottom:.7rem}
+.header-note p{font-size:12px;color:var(--muted);line-height:1.8}
+.page-header-visual{margin-top:2rem;width:min(100%,320px)}
+.page-header-visual img{display:block;width:100%;height:auto;filter:drop-shadow(0 28px 70px rgba(0,0,0,.5))}
+.sec{padding:4.5rem clamp(1.25rem,6vw,6rem);border-bottom:.5px solid var(--rule)}
+.sec>*{max-width:1120px;margin-left:auto;margin-right:auto}
+.sec-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;gap:1rem;flex-wrap:wrap}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,40px);font-weight:900;line-height:1.06;max-width:660px}
+.sec-n{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.25);letter-spacing:.3em}
+.body-copy{font-size:14px;color:var(--muted);line-height:1.85;max-width:680px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;border:.5px solid var(--rule)}
+.col{padding:1.75rem;border-right:.5px solid var(--rule)}
+.col:last-child{border-right:none}
+.col-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:.9rem}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.feature-card{border:1px solid var(--rule);border-radius:24px;padding:1.5rem;background:linear-gradient(145deg,rgba(255,255,255,.04),transparent)}
+.feature-card h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;line-height:1.08;margin:.8rem 0}
+.feature-card p{font-size:12px;color:var(--muted);line-height:1.8}
+.ledger{border:.5px solid var(--rule)}
+.ledger-row{display:grid;grid-template-columns:220px 1fr;border-bottom:.5px solid var(--rule)}
+.ledger-row:last-child{border-bottom:none}
+.ledger-key{padding:1rem 1.2rem;border-right:.5px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.46)}
+.ledger-val{padding:1rem 1.2rem;font-size:12px;color:var(--muted);line-height:1.8}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.info-card{border:1px solid var(--rule);border-radius:18px;background:rgba(255,255,255,.03);padding:1.75rem;transition:border-color .2s ease,background-color .2s ease}
+.info-card:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.05)}
+.info-card-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1.25;margin-bottom:.75rem}
+.info-card-body{font-size:13px;color:var(--muted);line-height:1.85}
+@media(min-width:901px){.info-card-full{grid-column:1 / -1}}
+@media(max-width:900px){.info-grid{grid-template-columns:1fr}}
+.wyg-accordion{display:flex;flex-direction:column;gap:.75rem}
+.wyg-item{border:.5px solid var(--rule);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.015)}
+.wyg-heading{margin:0}
+.wyg-trigger{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;padding:1.15rem 1.35rem;background:transparent;border:none;color:var(--wht);text-align:left;cursor:pointer;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;line-height:1.3}
+.wyg-trigger:hover{background:rgba(255,255,255,.035)}
+.wyg-trigger:focus-visible{outline:1.5px solid var(--grey);outline-offset:-3px}
+.wyg-title{flex:1}
+.wyg-icon{position:relative;width:14px;height:14px;flex:0 0 14px}
+.wyg-icon::before,.wyg-icon::after{content:'';position:absolute;inset:0;margin:auto;background:rgba(255,255,255,.55);transition:transform .3s ease,background .2s ease}
+.wyg-icon::before{width:100%;height:1px}
+.wyg-icon::after{width:1px;height:100%}
+.wyg-item.is-open .wyg-icon::after{transform:scaleY(0)}
+.wyg-item.is-open .wyg-icon::before,.wyg-item.is-open .wyg-icon::after{background:var(--wht)}
+.wyg-panel{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .35s ease}
+.wyg-item.is-open .wyg-panel{grid-template-rows:1fr;border-top:.5px solid var(--rule)}
+.wyg-panel-inner{overflow:hidden;min-height:0}
+.wyg-panel-text{margin:0;padding:1.1rem 1.35rem 1.3rem;font-size:13px;color:var(--muted);line-height:1.8}
+.hiw-accordion{display:flex;flex-direction:column;gap:1rem}
+.hiw-item{border:.5px solid var(--rule);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.015)}
+.hiw-heading{margin:0}
+.hiw-trigger{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;width:100%;padding:1.6rem 1.75rem;background:transparent;border:none;color:var(--wht);text-align:left;cursor:pointer}
+.hiw-trigger:hover{background:rgba(255,255,255,.035)}
+.hiw-trigger:focus-visible{outline:1.5px solid var(--grey);outline-offset:-3px}
+.hiw-heading-text{flex:1}
+.hiw-kicker{display:block;margin-bottom:.5rem}
+.hiw-title{display:block;font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:900;line-height:1.15}
+.hiw-icon{position:relative;width:16px;height:16px;flex:0 0 16px}
+.hiw-icon::before,.hiw-icon::after{content:'';position:absolute;inset:0;margin:auto;background:rgba(255,255,255,.55);transition:transform .3s ease,background .2s ease}
+.hiw-icon::before{width:100%;height:1px}
+.hiw-icon::after{width:1px;height:100%}
+.hiw-item.is-open .hiw-icon::after{transform:scaleY(0)}
+.hiw-item.is-open .hiw-icon::before,.hiw-item.is-open .hiw-icon::after{background:var(--wht)}
+.hiw-panel{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .35s ease}
+.hiw-item.is-open .hiw-panel{grid-template-rows:1fr;border-top:.5px solid var(--rule)}
+.hiw-panel-inner{overflow:hidden;min-height:0}
+.hiw-panel-content{padding:1.75rem}
+.hiw-panel-content .feature-grid{margin:0}
+.hiw-panel-content .disclaimer{margin-top:1.4rem}
+.faq{border:.5px solid var(--rule)}
+.faq-row{padding:1.4rem;border-bottom:.5px solid var(--rule)}
+.faq-row:last-child{border-bottom:none}
+.faq-q{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:.55rem}
+.faq-a{font-size:12px;color:var(--muted);line-height:1.8}
+.btn{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:1rem 1.45rem;text-decoration:none;border:.5px solid var(--wht);border-radius:999px;color:var(--wht);background:transparent}
+.btn:hover{background:var(--wht);color:var(--blk)}
+.disclaimer{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.34);letter-spacing:.08em;line-height:1.8}
+footer{padding:2rem 1.25rem;display:flex;justify-content:space-between;align-items:center;border-top:.5px solid var(--rule);flex-wrap:wrap;gap:1rem}
+.ft-logo{font-family:'Playfair Display',serif;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted)}
+.ft-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.ft-link{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none}
+.ft-copy{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.2)}
+@media(max-width:900px){.page-header-inner,.two-col,.feature-grid,.ledger-row{grid-template-columns:1fr}.col,.ledger-key{border-right:none;border-bottom:.5px solid var(--rule)}.ledger-key{padding-bottom:.7rem}.ledger-val{padding-top:.2rem}.header-note{justify-self:stretch}}
+.nav-toggle,.nav-close{min-width:44px;min-height:44px}
+@media(max-width:900px){.nav-panel{visibility:hidden}.nav-panel.open{visibility:visible}.nav-link{min-height:44px;display:flex;align-items:center}.ft-link{min-height:44px;display:inline-flex;align-items:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+@media(min-width:901px){nav{top:1rem;left:clamp(1rem,3vw,2.5rem);right:clamp(1rem,3vw,2.5rem);max-width:1280px;margin:0 auto;padding:.78rem .85rem .78rem 1.35rem;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(10,10,10,.84);box-shadow:0 16px 48px rgba(0,0,0,.28)}}
+@media(max-width:900px){nav{top:.75rem;left:.75rem;right:.75rem;padding:.7rem 1rem;border:1px solid rgba(255,255,255,.13);border-radius:16px;background:rgba(10,10,10,.92)}.nav-panel{border-radius:0}.sec,.page-header{padding-left:1rem;padding-right:1rem}}
+.nav-logo{display:block;width:150px;height:38px;flex:0 0 150px;font-size:0!important;letter-spacing:0!important;overflow:hidden}
+</style>
+<link rel="stylesheet" href="site-overrides.css">
+<link rel="stylesheet" href="site-mobile-overrides.css">
+<link rel="stylesheet" href="site-brand.css">
+</head>
+<body>
+<a href="#main-content" class="brand-skip">Skip to content</a>
+<nav class="site-nav" data-site-nav>
+  <a href="index.html" class="nav-logo serif" aria-label="The Badger Co. home"><picture><source srcset="bflogo.webp" type="image/webp"><img src="bflogo.png" alt="The Badger Co."></picture></a>
+  <button class="nav-toggle mono" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu" data-nav-toggle>Menu</button>
+  <div id="site-menu" class="nav-panel" data-nav-panel>
+    <div class="nav-menu" data-nav-menu>
+      <div class="nav-head">
+        <button class="nav-close mono" type="button" aria-label="Close navigation menu" data-nav-close>Close</button>
+      </div>
+      <div class="nav-links">
+        <a href="badgerfit.html" class="nav-link mono" aria-current="page" data-nav-link>Shoe Fit Check</a>
+        <a href="vault.html" class="nav-link mono" data-nav-link>Vault</a>
+        <a href="about.html" class="nav-link mono" data-nav-link>About</a>
+      </div>
+      <a href="https://badger-eight.vercel.app/" class="nav-cta" data-nav-link>Open beta ↗</a>
+    </div>
+  </div>
+</nav>
+<main id="main-content" class="brand-main">
+  <header class="brand-product-hero brand-wrap" id="fit-check"><p class="brand-kicker">BadgerFit / Early beta</p><h1 data-word-reveal-hero>One pair.<br>Let’s work out<br>the next step.</h1><div><p class="brand-lead">Meet Shoe Fit Check. Tell it where a shoe feels wrong and get a structured plan of what to try, what to avoid, and when to seek professional help.</p><a class="brand-button" href="https://badger-eight.vercel.app/">Open BadgerFit beta <span aria-hidden="true">↗</span></a><p class="brand-small">Opens at sign-in. No photo or scan needed for Shoe Fit Check.</p></div></header>
+  <section class="brand-section brand-wrap" id="inside"><div class="brand-section-head"><p class="brand-kicker">A look inside</p><h2 data-word-reveal>Start where it<br>feels wrong.</h2><p>Try the question preview below. These are examples from the app; the full check asks for more context before offering guidance.</p></div>
+    <div class="brand-demo" data-fit-preview>
+      <div class="brand-demo-start"><span class="brand-kicker">01 / Choose an area</span><h3>Where does it feel wrong?</h3><div class="brand-demo-choices" role="group" aria-label="Preview a question by area"><button type="button" data-area="heel" aria-pressed="true">Heel <span aria-hidden="true">↗</span></button><button type="button" data-area="forefoot" aria-pressed="false">Toes / forefoot <span aria-hidden="true">↗</span></button><button type="button" data-area="top" aria-pressed="false">Top of foot <span aria-hidden="true">↗</span></button></div></div>
+      <div class="brand-demo-question" aria-live="polite" aria-atomic="true"><span class="brand-kicker">02 / Describe the feeling</span><h3 data-preview-question>What happens at the back?</h3><ul data-preview-options><li>It lifts or slips out as I walk</li><li>It rubs or catches at the back</li><li>My whole foot slides forward</li></ul><p class="brand-small">Question preview only. Nothing entered here is saved.</p></div>
+    </div>
+    <div class="brand-step-line"><p><span>01</span> Tell us about the shoe</p><p><span>02</span> Describe what you notice</p><p><span>03</span> Read your next steps</p></div>
+  </section>
+  <section class="brand-light-band"><div class="brand-wrap brand-split"><div><p class="brand-kicker">Your result</p><h2>Useful guidance.<br>Room for nuance.</h2><p>Advice follows your answers. It doesn’t assume every dress shoe is narrow or that a different size is always the answer.</p><figure class="brand-footwear-visual"><img src="footwear-study-v1.webp" alt="AI-generated concept study of a dress shoe, Chelsea boot and everyday sneaker on grey plinths." width="1536" height="1024" loading="lazy" decoding="async"><figcaption>AI-generated footwear study · Illustrative, not a product collection.</figcaption></figure></div><div class="brand-output-list"><details open><summary>What to try first</summary><p>A practical starting action for the reported problem, when fit adjustments are appropriate.</p></details><details><summary>What to try next</summary><p>A fallback option when the result includes one, plus relevant things to avoid.</p></details><details><summary>What may explain the fit</summary><p>Plain-language context and, for some answers, a note that the shoe’s shape may be part of the problem.</p></details><details><summary>When to stop experimenting</summary><p>Certain reported symptoms lead to a safety message and professional-help guidance instead of fit adjustments.</p></details><details><summary>A product, when relevant</summary><p>The result may show a relevant product option. A recommendation is not a guarantee it will work for you.</p></details></div></div></section>
+  <section class="brand-section brand-wrap brand-split"><div><p class="brand-kicker">Under the surface</p><h2 data-word-reveal>Your experience in.<br>Structured guidance out.</h2></div><div><p class="brand-lead">Your answers about the shoe and how it feels are matched to a defined set of rules.</p><p>The reasoning can be reviewed. The guidance is still in beta; clinical validation and real-world outcomes have not been established.</p><a href="about.html" class="brand-link">Why we’re building this →</a></div></section>
+  <section class="brand-wrap brand-scan-note" id="scan"><span class="brand-status brand-status-muted">In development</span><div><h2>Foot Scan is still on the workbench.</h2><p>Foot Scan is paused while we validate measurement reliability. A release date has not been announced. Shoe Fit Check works without a scan.</p></div></section>
+  <section class="brand-section brand-wrap brand-faq" id="faq"><div><p class="brand-kicker">Before you start</p><h2>Straight answers.</h2></div><div class="brand-output-list"><details><summary>What can I use today?</summary><p>The BadgerFit beta includes Shoe Fit Check for discomfort in a specific pair. The app opens at sign-in; use the shoe-discomfort path after entering the app.</p></details><details><summary>Which shoes are you focusing on?</summary><p>Our focus is dress shoes, dress boots, and everyday sneakers. The current beta still lists additional footwear categories; dedicated subtype guidance is not yet built.</p></details><details><summary>Do I need a photo?</summary><p>No. Shoe Fit Check can use your reported experience without a photo or scan.</p></details><details><summary>Does this diagnose foot problems?</summary><p>No. It provides educational fit guidance and can show a safety message based on reported symptoms. It does not diagnose a condition or replace professional care.</p></details><details><summary>Are my shoe cases saved across devices?</summary><p>Fit Check case history is currently stored in the browser on the device you use. It is not yet synced across devices and can be lost if browser data is cleared. Other account data is handled separately; see our <a href="privacy.html">privacy notice</a>.</p></details></div></section>
+  <section class="brand-final brand-wrap"><h2>Bring your questions.<br>Start with your shoes.</h2><a class="brand-button" href="https://badger-eight.vercel.app/">Open BadgerFit beta <span aria-hidden="true">↗</span></a><a class="brand-link" href="waitlist.html">Get product updates →</a></section>
+</main>
+
+<footer class="site-footer footer-v2" id="site-footer">
+  <div class="footer-v2-main">
+    <div class="footer-v2-brand">
+      <a href="index.html" class="footer-v2-logo" aria-label="The Badger Co. home"><img src="TBCL.webp" alt="The Badger Co." width="1920" height="819" loading="lazy" decoding="async"></a>
+      <p>Technology and thoughtful design <br>for professional life.</p>
+      <a class="footer-v2-contact" href="mailto:support@thebadgerco.in">Let’s talk <span aria-hidden="true">↗</span><span>support@thebadgerco.in</span></a>
+    </div>
+    <nav class="footer-v2-explore" aria-label="Footer navigation">
+      <h2>Explore</h2>
+      <a href="badgerfit.html">Shoe Fit Check</a>
+      <a href="vault.html">The Vault</a>
+      <a href="about.html">Our approach</a>
+    </nav>
+    <div class="site-footer-signup footer-v2-signup">
+      <h2>Stay in the loop.</h2>
+      <p>Product updates. New ideas. What’s next.</p>
+      <form class="footer-signup-form" data-footer-signup novalidate>
+        <label class="visually-hidden" for="footerEmail">Email address</label>
+        <input type="email" id="footerEmail" name="email" class="footer-signup-input" placeholder="Your email address" required autocomplete="email" inputmode="email" aria-describedby="footerPrivacy footerSignupNote">
+        <input type="hidden" name="_subject" value="New BadgerFit waitlist signup">
+        <input type="hidden" name="source" value="Footer signup">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" aria-hidden="true" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <button type="submit" class="footer-signup-submit" aria-label="Join product updates"><span data-signup-label>Join</span><span aria-hidden="true">↗</span></button>
+      </form>
+      <p class="footer-signup-privacy-note" id="footerPrivacy">BadgerFit updates, delivered through FormSubmit. <a href="privacy.html">Privacy information</a>.</p>
+      <p class="footer-signup-note" id="footerSignupNote" data-footer-signup-note role="status" aria-live="polite" aria-atomic="true" hidden></p>
+    </div>
+  </div>
+  <div class="footer-v2-bottom">
+    <p class="footer-v2-copyright">© 2026 The Badger Co.</p>
+    <div class="footer-v2-social" role="group" aria-label="Follow The Badger Co. and BadgerFit">
+      <a href="https://www.instagram.com/the.badger.co/" target="_blank" rel="noopener noreferrer">Instagram · Brand <span aria-hidden="true">↗</span></a>
+      <a href="https://www.instagram.com/thebadgerfitapp/" target="_blank" rel="noopener noreferrer">Instagram · BadgerFit <span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/company/123393979/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      <a href="https://x.com/TheBadgerCoIN" target="_blank" rel="noopener noreferrer">X <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="footer-v2-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+</footer>
+
+<script src="site-navigation.js"></script>
+<script src="site-mobile-enhancements.js"></script>
+<script src="site-footer-signup.js"></script>
+<script src="site-reveal.js"></script>
+<script src="site-fit-preview.js"></script>
+</body>
+</html>

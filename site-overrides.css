@@ -1,0 +1,1464 @@
+/*
+ * Shared typography refinements.
+ *
+ * One font system for the whole site, loaded once per page from Google Fonts
+ * (Inter Tight / Inter / IBM Plex Mono, display=swap):
+ *   --font-display  bold neo-grotesk headings and major statements
+ *   --font-sans     body copy, navigation, buttons, forms
+ *   --font-mono     eyebrows, tags, section numbers, status labels, metadata
+ * Page-level <style> blocks still name 'Inter' and 'IBM Plex Mono' directly,
+ * which now resolve to the same loaded families; the rules below are the
+ * single source of truth wherever the two disagree.
+ */
+:root {
+  --font-display: "Inter Tight", Arial, sans-serif;
+  --font-sans: "Inter", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --tracking-ui: 0.16em;
+  --tracking-tag: 0.24em;
+  --tracking-meta: 0.08em;
+}
+
+.nav-logo {
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 40px;
+  flex: 0 0 150px;
+  overflow: hidden;
+  background: none;
+  font-size: 0;
+  letter-spacing: 0;
+}
+
+.nav-logo img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  filter: invert(1);
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+  line-height: 1.62;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.serif,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title,
+.sec-title,
+.hero-title,
+.screen-title,
+.float-value,
+.way-title,
+.ft2,
+.sec-title,
+.val-title,
+.col-title,
+.faq-q,
+.cat-title,
+.feature-copy h2,
+.section-head h2,
+.card h3,
+.content h2,
+.content h3,
+.check b,
+.article-head h1,
+.answer-strip h2,
+.cta h2,
+.final-title,
+.blog-card h3,
+.brand-line,
+.evidence-number,
+.page-header h1,
+.waitlist-title,
+.info-card-title,
+.foundation-title,
+.hiw-title,
+.wyg-title,
+.wyg-trigger,
+.hiw-trigger,
+.answer-strip h2,
+summary,
+/*
+ * Page <style> blocks target several headings through a descendant selector
+ * (.feature-card h3 and friends), which outranks a bare h3 above — so those
+ * combinations are matched here explicitly rather than relying on element
+ * selectors alone.
+ */
+.header-note h2,
+.hero-note h2,
+.feature-card h3,
+.info-card h3,
+.path-card h3,
+.guide-card h3,
+.check-card h3,
+.feature-copy h3,
+.mini-screen h3,
+.blog-card h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.hero-title,
+.page-title,
+.article-head h1,
+.answer-strip h2,
+.cta h2,
+.final-title,
+h1 {
+  line-height: 0.99;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.sec-title,
+.section-head h2,
+.feature-copy h2,
+.card h3,
+.content h2,
+.content h3,
+.col-title,
+.cat-title,
+.faq-q,
+.val-title,
+.way-title,
+.blog-card h3,
+.check b,
+.ft2,
+.screen-title,
+.float-value,
+.mini-screen h3,
+.story-item h3 {
+  line-height: 1.06;
+  letter-spacing: -0.024em;
+}
+
+/* Navigation, buttons, forms and card body copy stay in the text sans. */
+.nav-link,
+.nav-cta,
+.nav-toggle,
+.nav-close,
+.btn,
+.begin-trigger,
+.site-footer-link,
+.label,
+.fs {
+  font-family: var(--font-sans);
+}
+
+/*
+ * Technical labels — eyebrows, tags, section numbers, status labels, metadata
+ * and small captions. These are the only places the monospace face is used.
+ */
+.tag,
+.ft-link,
+.ft-copy,
+.status-pill,
+.cat-status,
+.filter,
+.read,
+.crumb,
+.meta,
+.toc-title,
+.flow-node,
+.flow-arrow,
+.screen-kicker,
+.screen-check,
+.float-label,
+.float-note,
+.fit-plan b,
+.story-num,
+.evidence-source,
+.blog-type,
+.way-label,
+.hero-trust,
+.sec-n,
+.disclaimer,
+.journal-label,
+.check-label,
+.h-node,
+.h-arrow,
+.pf-key,
+.pf-val,
+.pf-tag,
+.fn,
+.hero-note,
+.text-link,
+.note,
+.ledger-key,
+.foundation-body,
+.answer strong,
+.contact-label,
+.site-footer-heading,
+.site-footer-meta,
+.footer-signup-note,
+.footer-signup-privacy-note {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.tag,
+.nav-link,
+.nav-cta,
+.nav-toggle,
+.nav-close,
+.btn,
+.ft-link,
+.status-pill,
+.cat-status,
+.filter,
+.read,
+.crumb,
+.meta,
+.toc-title,
+.flow-node,
+.screen-kicker,
+.float-label,
+.fit-plan b,
+.evidence-source,
+.blog-type,
+.way-label,
+.hero-trust,
+.sec-n,
+.disclaimer,
+.journal-label,
+.check-label,
+.h-node,
+.pf-key,
+.pf-tag,
+.fn {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-ui);
+}
+
+.tag {
+  letter-spacing: var(--tracking-tag);
+  font-weight: 600;
+}
+
+.nav-link,
+.nav-cta,
+.btn,
+.ft-link,
+.read,
+.cat-status,
+.filter,
+.status-pill,
+.meta,
+.crumb,
+.screen-kicker,
+.float-label,
+.fit-plan b,
+.evidence-source,
+.blog-type,
+.way-label,
+.hero-trust,
+.sec-n,
+.disclaimer,
+.journal-label,
+.check-label,
+.h-node,
+.pf-key,
+.pf-tag,
+.fn {
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.btn,
+.nav-cta {
+  letter-spacing: 0.18em;
+}
+
+.body-copy,
+.hero-sub,
+.page-sub,
+.lead,
+.dek,
+.learn-note,
+.faq-a,
+.content p,
+.content li,
+.card p,
+.feature-copy p,
+.answer p,
+.check span,
+.val-body,
+.page-header p,
+.faq-intro p,
+.evidence-card p,
+.story-item p,
+.fit-plan p,
+.faq-answer,
+.guide-body,
+.aud-body,
+.check-val,
+.prob-cell,
+.fs,
+.metric {
+  font-family: var(--font-sans);
+  line-height: 1.66;
+}
+
+.body-copy,
+.page-sub,
+.lead,
+.dek,
+.learn-note,
+.faq-a,
+.content p,
+.content li,
+.card p,
+.feature-copy p,
+.check span,
+.val-body,
+.evidence-card p,
+.story-item p,
+.fit-plan p,
+.faq-answer,
+.guide-body,
+.aud-body,
+.check-val,
+.prob-cell,
+.hero-sub,
+.waitlist-copy,
+.answer p,
+.section-lead,
+.header-note p,
+.hero-note p,
+.answer-strip p {
+  /* 16px floor on small screens, easing up to ~17px on large ones. */
+  font-size: clamp(1rem, 0.2vw + 0.95rem, 1.06rem);
+}
+
+/*
+ * Dense in-card captions. These sit inside tight card grids, so they are
+ * lifted off the old 10-12px rather than all the way to the 16px body floor —
+ * going full body size here would re-flow every card grid on the site.
+ */
+.fs,
+.foundation-body,
+.feature-card p,
+.info-card p,
+.info-card-body,
+.path-card p,
+.guide-card p,
+.check-card p,
+.val-body {
+  font-size: 0.875rem;
+}
+
+.ft-copy,
+footer,
+.meta,
+.disclaimer,
+.evidence-source,
+.screen-check,
+.float-note,
+.journal-label,
+.check-label,
+.pf-key,
+.pf-tag,
+.hero-trust,
+.sec-n {
+  letter-spacing: var(--tracking-meta);
+}
+
+.ft-copy,
+footer,
+.meta,
+.disclaimer,
+.evidence-source {
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.page-title,
+.hero-title,
+.article-head h1,
+.waitlist-title,
+.final-title,
+.answer-strip h2,
+.cta h2,
+h1 {
+  font-weight: 700;
+}
+
+.sec-title,
+.section-head h2,
+.feature-copy h2,
+.card h3,
+.content h2,
+.content h3,
+.col-title,
+.cat-title,
+.faq-q,
+.val-title,
+.way-title,
+.blog-card h3,
+.check b,
+.ft2,
+.screen-title,
+.float-value,
+.mini-screen h3,
+.story-item h3,
+.info-card-title,
+.foundation-title,
+.hiw-title,
+.wyg-title,
+.wyg-trigger,
+summary,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+.content h2,
+.content h3,
+.faq-q,
+.col-title,
+.cat-title,
+.val-title,
+.story-item h3,
+.mini-screen h3,
+.feature-copy h2,
+.blog-card h3 {
+  text-transform: none;
+}
+
+.answer p,
+.hero-sub,
+.page-sub,
+.lead,
+.dek {
+  max-width: 40rem;
+}
+
+summary,
+.toc a,
+.ft-links a,
+.nav-link,
+.nav-cta,
+.btn {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+@media (max-width: 900px) {
+  .nav-logo {
+    width: 132px;
+    height: 38px;
+    flex-basis: 132px;
+  }
+
+  .hero-title,
+  .page-title,
+  .article-head h1,
+  .answer-strip h2,
+  .cta h2,
+  .final-title,
+  h1 {
+    line-height: 1;
+  }
+
+  .nav-link,
+  .nav-cta,
+  .btn,
+  .ft-link {
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (max-width: 480px) {
+  .tag,
+  .nav-link,
+  .nav-cta,
+  .btn,
+  .ft-link,
+  .status-pill,
+  .cat-status,
+  .filter,
+  .read,
+  .crumb,
+  .meta,
+  .toc-title,
+  .flow-node,
+  .screen-kicker,
+  .float-label,
+  .fit-plan b,
+  .evidence-source,
+  .blog-type,
+  .way-label,
+  .hero-trust,
+  .sec-n,
+  .disclaimer,
+  .journal-label,
+  .check-label,
+  .h-node,
+  .pf-key,
+  .pf-tag,
+  .fn {
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .page-header,
+  .article-hero,
+  .final-cta,
+  .answer-strip,
+  .future-block {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .pain-layout,
+  .faq-shell,
+  .two-way-grid,
+  .process-flow,
+  .problem-grid,
+  .evidence-grid,
+  .values-grid,
+  .two-col,
+  .featured-card,
+  .grid,
+  .cat-grid,
+  .layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-ctas,
+  .final-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-ctas .btn,
+  .final-ctas .btn,
+  .answer-strip .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .problem-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .evidence-grid,
+  .values-grid {
+    border-left: 0.5px solid var(--rule);
+    border-right: 0.5px solid var(--rule);
+  }
+
+  footer {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .sec,
+  .page-header,
+  .article-hero,
+  .hero,
+  .final-cta,
+  .answer-strip,
+  .future-block {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ft-links,
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+/* Shared navigation and footer */
+html.nav-open,
+body.nav-open {
+  overflow: hidden;
+}
+
+.site-nav {
+  position: fixed;
+  top: 1rem;
+  left: clamp(1rem, 3vw, 2.5rem);
+  right: clamp(1rem, 3vw, 2.5rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.78rem 0.85rem 0.78rem 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+  z-index: 1400;
+}
+
+/*
+ * The frosted-glass pill background lives on ::before, not on .site-nav
+ * itself. backdrop-filter (like transform/filter) creates a new containing
+ * block for position:fixed descendants — since the mobile nav-panel
+ * overlay is a fixed-position child of .site-nav, putting backdrop-filter
+ * directly on .site-nav trapped that full-screen overlay inside the small
+ * nav pill instead of the viewport. This keeps the same visual effect
+ * without .site-nav becoming a containing block. (Legacy per-page <style>
+ * blocks also set `nav{backdrop-filter:...}`; `backdrop-filter: none`
+ * above wins over those by specificity and must stay explicit.)
+ */
+.site-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(10, 10, 10, 0.84);
+  backdrop-filter: blur(14px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.site-nav .nav-logo {
+  flex-shrink: 0;
+}
+
+.site-nav .nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.site-nav .nav-panel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.site-nav .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav .nav-head {
+  display: none;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav .nav-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link[aria-current="page"] {
+  color: #fff;
+}
+
+.site-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.45rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s ease;
+}
+
+.site-nav .nav-link:hover::after,
+.site-nav .nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.site-nav .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.78rem 1.35rem;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav .nav-cta:hover,
+.site-nav .nav-cta[aria-current="page"] {
+  background: transparent;
+  color: #fff;
+}
+
+.site-nav .nav-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.site-nav :focus-visible,
+.site-footer :focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.site-footer {
+  display: block;
+  padding: clamp(2.5rem, 4vw, 4rem) clamp(1rem, 5vw, 3rem)
+    clamp(1.75rem, 3vw, 2.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: #000;
+  color: #fff;
+}
+
+.site-footer-top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.site-footer-cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 1.5vw, 1.1rem);
+  width: auto;
+  text-align: left;
+}
+
+.site-footer-signup {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 380px;
+}
+
+.site-footer-signup .site-footer-heading,
+.site-footer-social .site-footer-heading {
+  text-align: left;
+}
+
+.footer-signup-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.footer-signup-form:focus-within {
+  border-color: #fff;
+}
+
+.footer-signup-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.footer-signup-input:focus {
+  outline: none;
+}
+
+.footer-signup-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-signup-submit {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-signup-submit:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.footer-signup-privacy-note {
+  margin-top: 0.6rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  max-width: 380px;
+}
+
+.footer-signup-note {
+  margin-top: 0.6rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.footer-signup-note.is-error {
+  color: #ff9d9d;
+}
+
+.site-footer-social {
+  flex: 0 1 auto;
+}
+
+.site-footer-social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.site-footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-footer-icon:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.site-footer-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-footer-divider {
+  max-width: 1200px;
+  margin: clamp(2rem, 5vw, 3rem) auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-footer-group {
+  min-width: 0;
+}
+
+.site-footer-heading {
+  margin-bottom: 0.85rem;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.site-footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.site-footer-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.96rem, 0.2vw + 0.9rem, 1.04rem);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer-link:hover {
+  color: #fff;
+}
+
+.site-footer-wordmark {
+  display: block;
+  width: clamp(260px, 35vw, 430px);
+}
+
+.site-footer-wordmark img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-footer-meta {
+  max-width: 1200px;
+  margin-top: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    top: max(0.75rem, calc(env(safe-area-inset-top) + 0.25rem));
+    left: max(0.75rem, calc(env(safe-area-inset-left) + 0.25rem));
+    right: max(0.75rem, calc(env(safe-area-inset-right) + 0.25rem));
+    padding: 0.75rem 0.95rem;
+    border-radius: 18px;
+  }
+
+  .site-nav .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav .nav-panel {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-left: 0;
+    padding:
+      max(0.75rem, env(safe-area-inset-top))
+      max(0.75rem, env(safe-area-inset-right))
+      max(0.75rem, env(safe-area-inset-bottom))
+      max(0.75rem, env(safe-area-inset-left));
+    background: rgba(0, 0, 0, 0.96);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 2400;
+  }
+
+  .site-nav .nav-panel.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .site-nav .nav-menu {
+    width: min(calc(100% - 1rem), 31rem);
+    min-height: 100%;
+    margin-right: auto;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 24px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .site-nav .nav-head {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .site-nav .nav-close {
+    display: inline-flex;
+  }
+
+  .site-nav .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.1rem;
+    margin-top: clamp(1rem, 8vh, 4rem);
+  }
+
+  .site-nav .nav-link,
+  .site-nav .nav-cta {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .site-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.25rem;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  .site-nav .nav-link::after {
+    display: none;
+  }
+
+  .site-nav .nav-cta {
+    margin-top: auto;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer-top {
+    flex-direction: column;
+  }
+
+  .site-footer-cta-row {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .site-footer-signup {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav .nav-panel,
+  .site-nav .nav-link::after,
+  .site-nav .nav-cta,
+  .site-footer-link {
+    transition: none !important;
+  }
+}
+
+/*
+ * Generic scroll-reveal — class="reveal" on any section/card, paired with
+ * site-reveal.js. Gated behind .js-enabled so content is fully visible
+ * with no JS; the reduced-motion block below removes the animation (not
+ * the content) when the visitor has asked for less motion.
+ */
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js-enabled .reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-enabled .reveal {
+    transition: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*
+ * Card hover motion — a shared, additive layer over each page's own card
+ * styling. Standalone bordered cards get a lift; cards that share a border
+ * with their neighbours in a joined grid (foundation/check/col/val-cell)
+ * get a tint instead, since a lift would visibly gap them from siblings.
+ */
+.info-card,
+.feature-card,
+.fc,
+.path-card,
+.guide-card {
+  transition: transform 0.3s ease, border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.featured-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.featured-card .feature-art::before {
+  transition: transform 0.5s ease;
+}
+
+.featured-card .read {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.col,
+.val-cell,
+.foundation-cell,
+.check-card {
+  transition: background-color 0.3s ease;
+}
+
+/* Hover-triggered motion only where a real pointer can hover — on touch,
+   :hover would otherwise latch after a tap until the visitor taps elsewhere. */
+@media (hover: hover) and (pointer: fine) {
+  .info-card:hover,
+  .feature-card:hover,
+  .fc:hover,
+  .path-card:hover,
+  .guide-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .featured-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .featured-card:hover .feature-art::before {
+    transform: translate(-50%, -47%) rotate(-7deg) scale(1.04);
+  }
+
+  .featured-card:hover .read {
+    transform: translateX(4px);
+  }
+
+  .col:hover,
+  .val-cell:hover,
+  .foundation-cell:hover,
+  .check-card:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .info-card,
+  .feature-card,
+  .fc,
+  .path-card,
+  .guide-card,
+  .featured-card,
+  .featured-card .feature-art::before,
+  .featured-card .read,
+  .col,
+  .val-cell,
+  .foundation-cell,
+  .check-card {
+    transition: none !important;
+  }
+}
+
+/*
+ * Button motion — the single interaction system for every .btn on the site.
+ * The transition list lives here (not in each page's <style>) so colour,
+ * background, border, opacity and transform all run on one timing. Lift only
+ * where a real pointer can hover; press feedback works everywhere, since
+ * :active never "sticks" after a tap the way :hover can.
+ */
+.btn {
+  transition: color 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn[disabled]:hover {
+    transform: none;
+  }
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn[disabled]:active {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none !important;
+  }
+}
+
+/*
+ * Accordion indicators — the existing plus/minus marks keep their morph (the
+ * vertical stroke collapses) and gain a half-turn so the change reads as a
+ * deliberate rotation rather than a jump. Applies to How-It-Works, What You
+ * Get and the homepage Scan / Fit Check controls, all of which already track
+ * their state through aria-expanded / .is-open.
+ */
+.hiw-icon,
+.wyg-icon,
+.begin-trigger-icon {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hiw-item.is-open .hiw-icon,
+.wyg-item.is-open .wyg-icon,
+.begin-trigger[aria-expanded="true"] .begin-trigger-icon {
+  transform: rotate(180deg);
+}
+
+/* Scan / Fit Check controls: clearer resting, hover and expanded states. */
+.begin-trigger[aria-expanded="true"] {
+  background: rgba(38, 38, 38, 0.94);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hiw-icon,
+  .wyg-icon,
+  .begin-trigger-icon {
+    transition: none !important;
+  }
+}
+
+/*
+ * Interactive timeline — turns a run of sequential sections (About's
+ * story, How It Works' planned journey) into a scroll-revealed vertical
+ * timeline instead of stacked paragraph blocks. Pure CSS + a small
+ * IntersectionObserver in site-timeline.js; items are visible by default
+ * so the content is complete with JS or motion disabled.
+ */
+.timeline {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.timeline-track {
+  position: absolute;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  left: 0.65rem;
+  width: 1px;
+  background: var(--rule, rgba(255, 255, 255, 0.12));
+}
+
+.timeline-track-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgba(255, 255, 255, 0.6);
+  transition: height 0.15s linear;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2.75rem;
+  padding-bottom: 3.25rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.js-enabled .timeline-item {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.16, 0.8, 0.24, 1),
+    transform 0.7s cubic-bezier(0.16, 0.8, 0.24, 1);
+}
+
+.js-enabled .timeline-item.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--rule, rgba(255, 255, 255, 0.14));
+  background: var(--blk, #000);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  transition: border-color 0.4s ease, color 0.4s ease;
+}
+
+.timeline-marker-dot {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-item.in-view .timeline-marker {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+.timeline-item.in-view .timeline-marker-dot {
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.08);
+}
+
+.timeline-eyebrow {
+  margin-bottom: 0.6rem;
+}
+
+.timeline-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-enabled .timeline-item {
+    transition: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .timeline-track-fill {
+    transition: none !important;
+  }
+}
+
+/*
+ * Footer "Contact" disclosure — native <details>/<summary> so email and
+ * phone expand in place on click with zero JS and full built-in
+ * accessibility (no aria-expanded wiring to maintain, works with
+ * keyboard/screen readers out of the box).
+ */
+.contact-details {
+  width: 100%;
+}
+
+.contact-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.contact-summary::marker,
+.contact-summary::-webkit-details-marker {
+  display: none;
+}
+
+.contact-summary::after {
+  content: "+";
+  font-family: var(--font-sans);
+  font-size: 0.85em;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-details[open] .contact-summary::after {
+  content: "\2212";
+}
+
+.contact-detail-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.15rem 0 0.35rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.contact-label {
+  min-width: 3.4rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
