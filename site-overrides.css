@@ -11,7 +11,7 @@
  * single source of truth wherever the two disagree.
  */
 :root {
-  --font-display: "Inter Tight", Arial, sans-serif;
+  --font-display: "Libre Bodoni", serif;
   --font-sans: "Inter", Arial, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --tracking-ui: 0.16em;
