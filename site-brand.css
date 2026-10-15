@@ -195,6 +195,21 @@ body{background:#080808;color:#f6f6f4}
 @media(max-width:900px){.site-nav{padding:6px 14px;border-radius:999px}.site-nav .nav-logo{min-height:44px;height:44px}.site-nav .nav-cta{min-height:48px}}
 @media(max-width:360px){.footer-v2 .footer-signup-input{padding-left:10px}.footer-v2 .footer-signup-submit{min-width:74px;padding-inline:13px}}
 
+/* Editorial beta boundary: information first, surface treatment second. */
+.brand-beta-boundary{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;padding-block:96px;border-top:1px solid var(--brand-line);}
+.brand-beta-boundary .brand-kicker{margin-bottom:20px;}
+.brand-beta-boundary__grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.brand-beta-boundary__grid h3{font:500 18px/1.3 var(--font-sans);letter-spacing:-.02em;margin:0 0 18px;color:inherit;}
+.brand-beta-boundary__grid ul{list-style:none;margin:0;padding:0;border-top:1px solid currentColor;}
+.brand-beta-boundary__grid li{padding:13px 0;border-bottom:1px solid currentColor;font:400 14px/1.5 var(--font-sans);opacity:.72;}
+.brand-scan-note .brand-link{margin-top:20px;}
+@media(max-width:700px){
+  .brand-beta-boundary{grid-template-columns:1fr;gap:28px;padding-block:64px;}
+  .brand-beta-boundary__grid{grid-template-columns:1fr 1fr;gap:20px;}
+  .brand-beta-boundary__grid h3{font-size:16px;}
+}
+@media(max-width:420px){.brand-beta-boundary__grid{grid-template-columns:1fr;gap:28px;}}
+
 /* Editorial assets; product claims remain in the surrounding copy. */
 .brand-about-photo{position:relative;height:auto;max-height:none;aspect-ratio:4/5}
 .brand-about-photo img{height:100%;object-position:center}

@@ -36,6 +36,12 @@
       document.body.classList.remove("nav-open");
     };
 
+    // Start from a closed state even when the page is restored with stale
+    // drawer markup or scroll-lock classes from a previous navigation state.
+    panel.classList.remove("open");
+    setExpanded(false);
+    unlockScroll();
+
     const openMenu = () => {
       if (window.innerWidth > mobileBreakpoint) {
         return;
